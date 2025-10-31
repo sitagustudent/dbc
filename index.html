@@ -5,19 +5,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dhamma Nandi Buddhist College</title>
   <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <style>
+    /* ---- NAVBAR STYLING ---- */
+    nav {
+      background-color: #c21807;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
 
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 22px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background-color: #a31406;
+      border-radius: 4px;
+    }
+
+    /* ---- HAMBURGER BUTTON ---- */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      padding: 12px;
+      position: absolute;
+      right: 10px;
+      top: 8px;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* ---- MOBILE MENU ---- */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 45px;
+      }
+
+      nav a {
+        display: none;
+        width: 100%;
+        text-align: left;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        padding: 12px 18px;
+      }
+
+      nav.active a {
+        display: block;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+
+<body>
   <header>
-    <img src="dbclogo.png" alt="Dhamma Nandi Buddhist College Logo">
+    <img src="dbclogo.png" alt="Dhamma Nandi Buddhist College Logo" style="width:120px;">
     <h1>Dhamma Nandi Buddhist College</h1>
     <p>Established BE 2563 / CE 2019</p>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
+  <nav id="navbar">
+    <div class="menu-toggle" id="menu-toggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <a href="index.html" class="active">Home</a>
     <a href="about.html">About</a>
-<a href="announcements.html" class="active">Announcements</a>
+    <a href="announcements.html">Announcements</a>
     <a href="courses.html">Courses</a>
     <a href="departments.html">Departments</a>
     <a href="gallery.html">Gallery</a>
@@ -31,9 +107,10 @@
       nurturing Buddhist wisdom, moral discipline, and higher knowledge. Our mission is
       to integrate spiritual training with modern education for the benefit of society.
     </p>
+
     <div class="image-section">
-      <img src="f.jpg" alt="Monks studying in class">
-      <img src="c.jpg" alt="Students learning together">
+      <img src="f.jpg" alt="Monks studying in class" style="width:45%; border-radius:10px;">
+      <img src="c.jpg" alt="Students learning together" style="width:45%; border-radius:10px;">
     </div>
   </section>
 
@@ -41,5 +118,14 @@
     © 2025 Dhamma Nandi Buddhist College | All Rights Reserved.
   </footer>
 
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
