@@ -6,7 +6,75 @@
   <title>Announcements | Dhamma Nandi Buddhist College</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Custom styling for the announcement list */
+    /* Navbar styling */
+    nav {
+      background-color: #c21807;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 22px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background-color: #a31406;
+      border-radius: 4px;
+    }
+
+    /* Hamburger button */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      padding: 12px;
+      position: absolute;
+      right: 10px;
+      top: 8px;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 45px;
+      }
+
+      nav a {
+        display: none;
+        width: 100%;
+        text-align: left;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        padding: 12px 18px;
+      }
+
+      nav.active a {
+        display: block;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* Announcement styling */
     .announcement-board {
       max-width: 900px;
       margin: 40px auto;
@@ -48,18 +116,25 @@
     }
   </style>
 </head>
+
 <body>
 
   <header>
-    <img src="dbclogo.png" alt="Dhamma Nandi Buddhist College Logo">
+    <img src="dbclogo.png" alt="Dhamma Nandi Buddhist College Logo" style="width:120px;">
     <h1>Dhamma Nandi Buddhist College</h1>
     <p>Established BE 2563 / CE 2019</p>
   </header>
 
-  <nav>
+  <nav id="navbar">
+    <div class="menu-toggle" id="menu-toggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-<a href="announcements.html" class="active">Announcements</a>
+    <a href="announcements.html" class="active">Announcements</a>
     <a href="courses.html">Courses</a>
     <a href="departments.html">Departments</a>
     <a href="gallery.html">Gallery</a>
@@ -69,46 +144,44 @@
   <section>
     <h2>Official Announcements</h2>
     <div class="announcement-board">
- 
-<div class="announcement">
+
+      <div class="announcement">
         <h3>Dhammanandi Buddhist College (2024–2025 Academic Year)</h3>
-<p>Diploma in English (Residential Program) Student Admission</p>
+        <p><b>Diploma in English (Residential Program) Student Admission</b></p>
         <p class="date">Posted on: October 15, 2025</p>
         <p>
-          1. Eligible applicants are:
+          <b>1. Eligible applicants:</b><br>
+          • Monks who have completed Dhammācariya scriptures and passed the Kyam Sway and Pathamakyaw examinations.<br>
+          • Nuns (Thilashin) of any age belonging to the Buddhist Order.<br>
+          • Laypersons who have passed the university entrance examination.<br><br>
 
-Monks who have completed Dhammācariya scriptures and passed the Kyam Sway and Pathamakyaw examinations,
-Nuns (Thilashin) of any age or restriction who belong to the Buddhist Order, and
-Laypersons who have passed the university entrance examination.<br>
-2. No entrance examination is required for admission.
-There will be two levels offered:<br>
-Level (1): For beginners (starting from basic A.B.C.D.),<br>
-Level (2): For those with some prior knowledge of English.<br><br>
+          <b>2. Admission & Levels:</b><br>
+          No entrance exam required.<br>
+          Level (1): For beginners (basic A.B.C.D.)<br>
+          Level (2): For those with some prior knowledge of English.<br><br>
 
-<h3>Application and Admission Schedule</h3>
+          <h3>Application and Admission Schedule</h3>
+          1. Forms available: 7 June 2023<br>
+          2. Submission deadline: 14 June 2025<br>
+          Apply via Phone/Viber: 09777773756, 09689687678, 09793482213<br>
+          3. Resident monks/nuns arrive by 14 June 2025<br>
+          4. Bring personal necessities (alms bowl, robes, bedding, etc.)<br>
+          5. Classes begin: 15 June 2025<br>
+          6. Course ends: 24 February 2025<br>
+          7. Weekly tests every 15 days.<br><br>
 
-1. Application forms will be available starting 7 June 2023.<br>
-2. The final date for submission is 14 June 2025. Applicants may apply in person or register their names via
-Phone/Viber: 09777773756, 09689687678, 09793482213, or via Messenger.<br>
-3. Resident monks and nuns must arrive by 14 June 2025.<br>
-4. Students must bring their own personal necessities (alms bowl, robes, bedding, etc.).<br>
-5. Classes will begin on 15 June 2025.<br>
-6. The course will end on 24 February 2025.<br>
-7. Lessons will be held six days per week, and there will be a weekly test every 15 days.<br><br><br>
-<h3>Benefits upon Completion</h3>
-Ability to use English proficiently at a foundational level.
-Eligibility to sit for relevant entrance exams at Buddhist Universities in Myanmar.
-Opportunity to pursue further studies at international universities.<br><br>
+          <h3>Benefits upon Completion</h3>
+          • Proficiency in foundational English.<br>
+          • Eligibility for Buddhist University entrance exams.<br>
+          • Opportunity to study abroad.<br><br>
 
-<h3>For Application Forms and Inquiries:</h3>
-
-Dhammanandi Buddhist College
-Tanintharyi Road, near Ocean Center,
-Bokone Ward, Mawlamyine City
-Phone: 09777773756, 09689687678, 09793482213
+          <h3>For Inquiries:</h3>
+          Dhammanandi Buddhist College<br>
+          Tanintharyi Road, near Ocean Center, Bokone Ward, Mawlamyine City<br>
+          Phone: 09777773756, 09689687678, 09793482213
         </p>
-      </div>   
-  
+      </div>
+
       <div class="announcement">
         <h3>🪷 Annual Meditation Retreat 2025</h3>
         <p class="date">Posted on: October 15, 2025</p>
@@ -152,6 +225,15 @@ Phone: 09777773756, 09689687678, 09793482213
   <footer>
     © 2025 Dhamma Nandi Buddhist College | All Rights Reserved.
   </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+    menuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>
